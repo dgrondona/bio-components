@@ -29,31 +29,11 @@ def intro(data):
     return "\n\n".join(data["intro"])
 
 
-def work(data):
-    out = []
-    for w in data["work"]:
-        out.append(f'**[{w["name"]}]({w["url"]})** · `{w["lang"]}`  \n{w["desc"]}')
-    return "\n\n".join(out)
-
-
-def stack(data):
-    rows = ["| | |", "|---|---|"]
-    for g in data["stack"]:
-        rows.append(f'| **{g["group"]}** | {" · ".join(g["items"])} |')
-    return "\n".join(rows)
-
-
-def stats(data):
-    s = data["stats"]
-    head = (f'**{s["contributions_total"]:,}** contributions · '
-            f'**{s["repositories"]}** repositories · '
-            f'**{s["languages"]}** languages · '
-            f'active since **{s["since"]}**')
-    years = " · ".join(f'{y} — **{v}**' for y, v in sorted(s["by_year"].items()))
-    return f'{head}\n\n<sub>{years}</sub>'
-
-
-BLOCKS = {"intro": intro, "work": work, "stack": stack, "stats": stats}
+# Only the intro is a managed block. The work card cannot carry links -- a
+# camo-proxied SVG never can -- but the right place for navigation is GitHub's
+# own pinned-repository row, which sits directly under the README and is
+# clickable, described and updated by GitHub itself.
+BLOCKS = {"intro": intro}
 
 
 def render_all(doc, data):

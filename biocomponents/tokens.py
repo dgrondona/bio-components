@@ -59,3 +59,16 @@ FONTS = {
     "semibold": "fonts/Inter-SemiBold.ttf",
     "bold":     "fonts/Inter-Bold.ttf",
 }
+
+
+# Linguist's own language colours. Using the real ones means a reader who knows
+# GitHub recognises a language before reading its label -- colour doing work
+# rather than decoration.
+LANG_COLORS = {
+    "JavaScript": "#f1e05a", "Python": "#3572A5", "C++": "#f34b7d",
+    "C": "#555555", "C#": "#178600", "Assembly": "#6E4C13",
+    "HTML": "#e34c26", "CSS": "#663399", "Shell": "#89e051",
+    "TypeScript": "#3178c6", "TeX": "#3D6117", "Java": "#b07219",
+    "Go": "#00ADD8", "Rust": "#dea584", "Ruby": "#701516",
+}
+LANG_FALLBACK = "#8b949e"

@@ -6,60 +6,53 @@
     "focus": [
       "Security",
       "Systems",
-      "Tooling"
+      "Algorithms"
     ],
     "handle": "dgrondona"
   },
   "intro": [
     "Computer Science and Engineering student at UC Merced, focused on security and systems programming.",
-    "Most of what I build sits below the application layer: runtime patching against a Unity IL2CPP target, an asset compiler that recovers geometry and task graphs out of decompiled prefabs, cross-platform install tooling. I'm drawn to the gap between how a system is documented and how it actually behaves, which is the same thing that pulled me toward security."
+    "Coursework across algorithms, computer organization and full-stack development, plus a real-time multiplayer game built on Flask-SocketIO. I work as readily in MIPS assembly and C++ as in Python, and I'm drawn to the gap between how a system is documented and how it actually behaves \u2014 the same thing that pulled me toward security."
   ],
   "work": [
     {
-      "name": "super-squad-among-us",
-      "lang": "C#",
-      "desc": "Client-side runtime addon for a Unity IL2CPP game. Harmony patching, reflection-driven registration with no manual wiring, and release channels derived entirely from the version string.",
-      "url": "https://github.com/dgrondona/super-squad-among-us"
-    },
-    {
-      "name": "skeld-to-li",
-      "lang": "Python",
-      "desc": "Asset pipeline that reads a decompiled Unity prefab and recompiles its geometry, colliders and task graph into a third-party map format.",
-      "url": "https://github.com/dgrondona/skeld-to-li"
-    },
-    {
-      "name": "canvas-to-discord",
-      "lang": "Python",
-      "desc": "Two scheduled GitHub Actions mirroring an LMS into Discord. HTML-to-markdown conversion so formatting survives, independent state per bot, configured entirely through repository secrets.",
-      "url": "https://github.com/dgrondona/canvas-to-discord"
-    },
-    {
       "name": "67-Race",
       "lang": "JavaScript",
-      "desc": "Full-stack multiplayer racing game. Flask API with JWT auth and bcrypt-hashed credentials behind a vanilla JS client.",
+      "desc": "Real-time multiplayer racing game. Flask-SocketIO over eventlet with matchmaking, bot opponents and JWT auth behind a React front end \u2014 around 830 lines of game logic.",
       "url": "https://github.com/dgrondona/67-Race"
     },
     {
-      "name": "among-us-mod-updater",
-      "lang": "Shell",
-      "desc": "POSIX install-and-update script targeting Linux, macOS and Windows through WSL, with no runtime dependencies beyond a shell.",
-      "url": "https://github.com/dgrondona/among-us-mod-updater"
+      "name": "CSE108",
+      "lang": "Python",
+      "desc": "Full-stack web development. Flask REST APIs over SQLAlchemy and SQLite, session auth and generated admin views, serving a compiled React build.",
+      "url": "https://github.com/dgrondona/CSE108"
     },
     {
-      "name": "SpectralAnalyzer",
+      "name": "CSE100",
       "lang": "C++",
-      "desc": "Real-time spectral analysis of audio input.",
-      "url": "https://github.com/dgrondona/SpectralAnalyzer"
+      "desc": "Algorithm design and analysis. Thirteen graded labs from minimum spanning trees to matrix algorithms, each built with make and checked against reference output.",
+      "url": "https://github.com/dgrondona/CSE100"
+    },
+    {
+      "name": "CSE030-Final",
+      "lang": "C++",
+      "desc": "Tic-tac-toe with AI opponents driven by minimax \u2014 adversarial search over the full game tree.",
+      "url": "https://github.com/dgrondona/CSE030-Final"
+    },
+    {
+      "name": "CSE031-Project02",
+      "lang": "Assembly",
+      "desc": "Selection sort and recursive summation written directly in MIPS assembly.",
+      "url": "https://github.com/dgrondona/CSE031-Project02"
     }
   ],
   "stack": [
     {
       "group": "Systems & Runtime",
       "items": [
-        "C#",
         "C++",
         "C",
-        "Assembly"
+        "MIPS Assembly"
       ]
     },
     {
@@ -73,20 +66,19 @@
     {
       "group": "Web",
       "items": [
-        "TypeScript",
         "JavaScript",
-        "React / Next.js",
+        "React",
         "Flask",
-        "Tailwind"
+        "SQLAlchemy"
       ]
     },
     {
-      "group": "Platform",
+      "group": "Tooling",
       "items": [
         "Linux",
         "Git",
-        "SQLAlchemy",
-        "Unity / IL2CPP"
+        "Make",
+        "SQLite"
       ]
     }
   ],

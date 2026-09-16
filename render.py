@@ -25,15 +25,25 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 def render(data, outdir):
     os.makedirs(outdir, exist_ok=True)
-    written = []
+    written, expected = [], set()
     for name, fn in svg.COMPONENTS.items():
         for variant, width in svg.VARIANTS.items():
             for theme in ("light", "dark"):
                 doc = fn(data, T.THEMES[theme], width)
-                p = os.path.join(outdir, f"{name}-{variant}-{theme}.svg")
-                with open(p, "w") as f:
+                fname = f"{name}-{variant}-{theme}.svg"
+                with open(os.path.join(outdir, fname), "w") as f:
                     f.write(doc)
-                written.append(p)
+                expected.add(fname)
+                written.append(os.path.join(outdir, fname))
+
+    # Drop output for components that no longer exist. Without this a renamed or
+    # merged component leaves its old files behind forever -- they get committed,
+    # and any README still pointing at one keeps being served a stale card with
+    # no error anywhere.
+    for stale in sorted(set(os.listdir(outdir)) - expected):
+        if stale.endswith(".svg"):
+            os.remove(os.path.join(outdir, stale))
+            print(f"  pruned stale {stale}")
     return written
 
 
