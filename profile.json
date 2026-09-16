@@ -1,0 +1,171 @@
+{
+  "identity": {
+    "name": "Draven Grondona",
+    "role": "Computer Science and Engineering",
+    "affiliation": "University of California, Merced",
+    "focus": [
+      "Security",
+      "Systems",
+      "Tooling"
+    ],
+    "handle": "dgrondona"
+  },
+  "intro": [
+    "Computer Science and Engineering student at UC Merced, focused on security and systems programming.",
+    "Most of what I build sits below the application layer: runtime patching against a Unity IL2CPP target, an asset compiler that recovers geometry and task graphs out of decompiled prefabs, cross-platform install tooling. I'm drawn to the gap between how a system is documented and how it actually behaves, which is the same thing that pulled me toward security."
+  ],
+  "work": [
+    {
+      "name": "super-squad-among-us",
+      "lang": "C#",
+      "desc": "Client-side runtime addon for a Unity IL2CPP game. Harmony patching, reflection-driven registration with no manual wiring, and release channels derived entirely from the version string.",
+      "url": "https://github.com/dgrondona/super-squad-among-us"
+    },
+    {
+      "name": "skeld-to-li",
+      "lang": "Python",
+      "desc": "Asset pipeline that reads a decompiled Unity prefab and recompiles its geometry, colliders and task graph into a third-party map format.",
+      "url": "https://github.com/dgrondona/skeld-to-li"
+    },
+    {
+      "name": "canvas-to-discord",
+      "lang": "Python",
+      "desc": "Two scheduled GitHub Actions mirroring an LMS into Discord. HTML-to-markdown conversion so formatting survives, independent state per bot, configured entirely through repository secrets.",
+      "url": "https://github.com/dgrondona/canvas-to-discord"
+    },
+    {
+      "name": "67-Race",
+      "lang": "JavaScript",
+      "desc": "Full-stack multiplayer racing game. Flask API with JWT auth and bcrypt-hashed credentials behind a vanilla JS client.",
+      "url": "https://github.com/dgrondona/67-Race"
+    },
+    {
+      "name": "among-us-mod-updater",
+      "lang": "Shell",
+      "desc": "POSIX install-and-update script targeting Linux, macOS and Windows through WSL, with no runtime dependencies beyond a shell.",
+      "url": "https://github.com/dgrondona/among-us-mod-updater"
+    },
+    {
+      "name": "SpectralAnalyzer",
+      "lang": "C++",
+      "desc": "Real-time spectral analysis of audio input.",
+      "url": "https://github.com/dgrondona/SpectralAnalyzer"
+    }
+  ],
+  "stack": [
+    {
+      "group": "Systems & Runtime",
+      "items": [
+        "C#",
+        "C++",
+        "C",
+        "Assembly"
+      ]
+    },
+    {
+      "group": "Scripting & Automation",
+      "items": [
+        "Python",
+        "Bash",
+        "GitHub Actions"
+      ]
+    },
+    {
+      "group": "Web",
+      "items": [
+        "TypeScript",
+        "JavaScript",
+        "React / Next.js",
+        "Flask",
+        "Tailwind"
+      ]
+    },
+    {
+      "group": "Platform",
+      "items": [
+        "Linux",
+        "Git",
+        "SQLAlchemy",
+        "Unity / IL2CPP"
+      ]
+    }
+  ],
+  "stats": {
+    "contributions_total": 617,
+    "repositories": 19,
+    "languages": 9,
+    "since": 2024,
+    "by_year": {
+      "2024": 52,
+      "2025": 246,
+      "2026": 319
+    },
+    "generated": "2026-09-16",
+    "weekly": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      3,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      2,
+      6,
+      6,
+      8,
+      4,
+      9,
+      5,
+      1,
+      6,
+      2,
+      2,
+      0,
+      6,
+      3,
+      0,
+      5,
+      2,
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      9,
+      3,
+      4,
+      3,
+      0,
+      0,
+      0,
+      4,
+      4,
+      2
+    ],
+    "weekly_from": "2025-09-15"
+  },
+  "links": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/dgrondona"
+    },
+    {
+      "label": "Email",
+      "url": "mailto:draven.grondona@gmail.com"
+    }
+  ]
+}

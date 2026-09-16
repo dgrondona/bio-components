@@ -1,0 +1,55 @@
+# Refreshes the stats in profile.json from the GitHub API, re-renders every SVG
+# variant, and commits the result. The profile README points at these files by
+# raw URL, so a commit here is what makes the cards on the profile update.
+#
+# Uses only the built-in GITHUB_TOKEN — it writes to this repository and nowhere
+# else, so no personal access token is needed.
+
+name: Render components
+
+on:
+  schedule:
+    - cron: "40 5 * * *"   # daily, 05:40 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "biocomponents/**"
+      - "render.py"
+      - "profile.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install --quiet fonttools lxml
+
+      - name: Refresh stats and render
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 render.py --live --check
+
+      - name: Commit if anything changed
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing changed — components are already current."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile.json out
+          git commit -m "chore: refresh components"
+          git push
