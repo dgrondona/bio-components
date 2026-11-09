@@ -83,18 +83,17 @@
     }
   ],
   "stats": {
-    "contributions_total": 1096,
+    "contributions_total": 1097,
     "repositories": 21,
     "languages": 10,
     "since": 2024,
     "by_year": {
       "2024": 52,
       "2025": 246,
-      "2026": 798
+      "2026": 799
     },
-    "generated": "2026-11-08",
+    "generated": "2026-11-09",
     "weekly": [
-      0,
       0,
       0,
       3,
@@ -146,9 +145,10 @@
       7,
       7,
       9,
-      12
+      12,
+      0
     ],
-    "weekly_from": "2025-11-03"
+    "weekly_from": "2025-11-10"
   },
   "links": [
     {
